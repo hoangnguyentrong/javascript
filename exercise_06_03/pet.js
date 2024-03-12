@@ -1,31 +1,34 @@
 class pet{
-  constructor(name,talk){
+  constructor(name,sound){
     this.name = name;
-    this.talk = talk;
+    this.sound = sound;
   }
   introduce(){
-    console.log(`ten toi la ${this.name + this.talk}`)
-    return this.name + this.talk;
+    console.log(`toi la pet va ten toi la ${this.name }`)
+    return this.name ;
   }
+  talk(){
+    console.log(`${this.sound}`) ;
+  }
+  
 }
 class dog extends pet {
-  constructor(name,talk,kind){
-    super(name,talk);
+  constructor(name,sound,kind){
+    super(name,sound);
     this.kind = kind;
   }
   mykind(){
     console.log(`toi la dong vat ${this.kind}`)
   }
   talk(){
-    console.log(`Woof! Woof!`);
+    console.log(`Woof! Woof! ${this.sound}`);
   }
-  introduce(){
-    super.introduce();
-    console.log(`${this.kind}`);
-  }
+ 
 }
-var myPet = new pet(' momo',' meomeo');
-myPet.introduce();
-var mydog = new dog('momo1', ' meomeo1', ' dog');
-mydog.introduce();
+var myDog = new dog('Buddy','happy', 'Golden');
+myDog.introduce();
+myDog.mykind();
+myDog.talk();
+
+
 
